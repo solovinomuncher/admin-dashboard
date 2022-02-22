@@ -20,6 +20,11 @@ section > p {
   align-self: center;
 }
 
+.profile-pic,
+.trending__pp {
+  width: 50px;
+}
+
 /* sidebar */
 .sidebar {
   color: white;
@@ -47,6 +52,18 @@ section > p {
   gap: 20px;
   padding: 20px;
   grid-template-columns: 1fr;
+}
+
+.sidebar__main-nav > div,
+.sidebar__settings > div {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 10px;
+  grid-auto-flow: column;
+}
+
+.sidebar-icons {
+  width: 1rem;
 }
 
 .sidebar__settings {
@@ -88,6 +105,7 @@ section > p {
   background: lightsteelblue;
   width: 40vw;
   height: 1.5rem;
+  padding-left: 10px;
 }
 
 .header__bell-pp-name {
@@ -95,7 +113,7 @@ section > p {
   grid-template-columns: 1fr 1fr 2fr;
   align-items: center;
   justify-items: center;
-  padding-right: 10px;
+  gap: 10px;
 }
 
 .header__pp-hi-name {
@@ -140,6 +158,9 @@ section > p {
     height: 40vh;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .header__user-action-btns {
+    margin-right: 0;
   }
   body {
     grid-template-rows: 1fr 3fr;
@@ -214,6 +235,12 @@ section > p {
   .sidebar {
     height: 155vh;
   }
+  .sidebar__main-nav > div,
+  .sidebar__settings > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    grid-auto-flow: row;
+  }
   .main {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -231,13 +258,27 @@ section > p {
 
 @media (max-width: 500px) {
   .sidebar {
-    height: 200vh;
+    height: 240vh;
+  }
+  .sidebar__dashboard-logo > img {
+    justify-self: center;
+  }
+  .sidebar__dashboard-logo > h1 {
+    display: none;
+  }
+  .sidebar__main-nav > div,
+  .sidebar__settings > div {
+    justify-items: center;
+  }
+  .sidebar__main-nav > div > p,
+  .sidebar__settings > div > p {
+    display: none;
   }
   .header {
-    height: 50vh;
+    height: 60vh;
   }
   .main {
-    height: 150vh;
+    height: 180vh;
   }
 }
 
@@ -311,6 +352,11 @@ section > p {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
+  column-gap: 5px;
+}
+
+.trending > p {
+  align-self: center;
 }
 
 .trending > img {
